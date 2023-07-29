@@ -16,7 +16,8 @@ class Solution
             auto node=pair.first;
             int val=pair.second;
             qu.pop();
-            if(mp[val]==0) mp[val]=node->data;
+            if(mp[val]==0) mp[val]=node->data;      //for top view;
+            // mp[val]=node->data;            //for bottom view;
             
             if(node->left)  qu.push({node->left,val-1});
             if(node->right)    qu.push({node->right,val+1});
