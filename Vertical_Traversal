@@ -1,0 +1,28 @@
+/*  Question link: https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1
+    Explanation (by striver) link: https://www.youtube.com/watch?v=q_a6lpbKJdw&ab_channel=takeUforward  */
+
+vector<int> verticalOrder(Node *root)
+    {
+        vector<int> ans;
+        map<int,vector<int>> mp;
+        queue<pair<Node*,int>> qu;
+        qu.push({root,0});
+        
+        while(qu.size()){
+            auto pair=qu.front();
+            qu.pop();
+            auto node=pair.first;
+            int val=pair.second;
+            
+            mp[val].push_back(node->data);
+            
+            if(node->left)  qu.push({node->left,val-1});
+            if(node->right) qu.push({node->right,val+1});
+        }
+        
+        for(auto& x:mp){
+            for(auto& y:x.second)
+                ans.push_back(y);
+        }
+        return ans;
+}
