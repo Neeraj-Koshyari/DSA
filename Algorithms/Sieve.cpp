@@ -2,7 +2,7 @@
 
 //insted of 2*i we use i*i because till i index they are already marked as non prime;
 
-vector<int> stieve(int n){
+vector<int> sieve(int n){
 	vector<int> v(n+1,1),prime;
 	v[0] = v[1] = 0;
 
