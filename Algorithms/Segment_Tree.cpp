@@ -6,7 +6,7 @@
 
 // Code for finding Sum in given Segment
 
-void build(int idx,int l, int r,vector<int>& v, vector<int>& seg){
+void build(int idx,int l, int r,vector<long long>& v, vector<long long>& seg){
 	if(l == r){
 		seg[idx] = v[l];
 		return;
@@ -19,7 +19,7 @@ void build(int idx,int l, int r,vector<int>& v, vector<int>& seg){
 	seg[idx] = seg[2*idx+1] + seg[2*idx+2];
 }
 
-int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& seg){
+int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long long>& seg){
 
 	if(l >= qL && r <= qR)	return seg[idx];	//if current segment completly lies in finding segment
 
@@ -27,8 +27,8 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& se
 
 	// partial overlapping, Then check in left and right
 	int mid = (l+r)/2;
-	int left = query(v,2*idx+1,l,mid,qL,qR,seg);
-	int right = query(v,2*idx+2,mid+1,r,qL,qR,seg);
+	long long left = query(v,2*idx+1,l,mid,qL,qR,seg);
+	long long right = query(v,2*idx+2,mid+1,r,qL,qR,seg);
 
 	return left + right;
 }
@@ -40,20 +40,20 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& se
 
 //Code for finding min element in given Segment
 
-void build(int idx,int l, int r,vector<int>& v, vector<int>& seg){
+void build(int idx,int l, int r,vector<long long>& v, vector<long long>& seg){
 	if(l == r){
 		seg[idx] = v[l];
 		return;
 	}
 
 	int mid = (l+r)/2;
-	build(2*idx+1, l,mid, v, seg);
+	build(2*idx+1, l,mid, v, seg);	
 	build(2*idx+2, mid+1,r, v, seg);
 
 	seg[idx] = min(seg[2*idx+1],seg[2*idx+2]);
 }
 
-int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& seg){
+int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long long>& seg){
 
 	if(l >= qL && r <= qR)	return seg[idx];	//if current segment completly lies in finding segment
 
@@ -61,8 +61,8 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& se
 
 	// Partial overlapping check in left and right
 	int mid = (l+r)/2;
-	int left = query(v,2*idx+1,l,mid,qL,qR,seg);
-	int right = query(v,2*idx+2,mid+1,r,qL,qR,seg);
+	long long left = query(v,2*idx+1,l,mid,qL,qR,seg);
+	long long right = query(v,2*idx+2,mid+1,r,qL,qR,seg);
 
 	return min(left,right);
 }
@@ -70,3 +70,19 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<int>& se
 //size of seg vector will be ' 4*n ' 
 // First call build(0,0,n-1,v,seg)
 // Then for each query call query(v,0,0,n-1,l,r,seg)), Where l and r are asked range. If they are 1 based index then subtract 1 to l and r both.
+
+
+// Code for update query problems. 
+//This code is for updating the sum after replacing the value of index k to u.
+void update(int idx, int l, int r, int k, int u,vector<ll>& seg){
+	if(l == r){	
+		seg[idx] = u;
+		return;
+	}
+
+	int mid = (l+r)/2;
+	if(k<=mid)	update(2*idx+1, l, mid, k, u, seg);
+	else update(2*idx+2,mid+1, r, k, u, seg);
+
+	seg[idx] = seg[2*idx + 1] + seg[2*idx + 2];
+}
