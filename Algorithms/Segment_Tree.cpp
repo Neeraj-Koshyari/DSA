@@ -1,10 +1,16 @@
-//YouTube: https://www.youtube.com/watch?v=-dUiRtJ8ot0
+/* YouTube: https://www.youtube.com/watch?v=-dUiRtJ8ot0
 
-// T.C. for building segment and for single query is log (n)
-// T.C. for q queries is  q * log(n) where ' q ' is number of queries and ' n ' is size of array.
+T.C. for building segment tree is number of nodes ' 2*n - 1 ' ( o(n) )
+T.C. for a single query is log(n) and for q queries it become q * log(n). Where 'n' is size of array
 
 
-// Code for finding Sum in given Segment
+Code for finding Sum in given Segment
+
+size of seg vector will be ' 4*n ' 
+First call build(0,0,n-1,v,seg)
+Then for each query call query(v,0,0,n-1,l,r,seg)), Where l and r are asked range. If they are 1 based index then subtract 1 to l and r both.
+*/
+
 
 void build(int idx,int l, int r,vector<long long>& v, vector<long long>& seg){
 	if(l == r){
@@ -32,11 +38,6 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long lon
 
 	return left + right;
 }
-//size of seg vector will be ' 4*n ' 
-// First call build(0,0,n-1,v,seg)
-// Then for each query call query(v,0,0,n-1,l,r,seg)), Where l and r are asked range. If they are 1 based index then subtract 1 to l and r both.
-
-
 
 //Code for finding min element in given Segment
 
@@ -66,10 +67,6 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long lon
 
 	return min(left,right);
 }
-
-//size of seg vector will be ' 4*n ' 
-// First call build(0,0,n-1,v,seg)
-// Then for each query call query(v,0,0,n-1,l,r,seg)), Where l and r are asked range. If they are 1 based index then subtract 1 to l and r both.
 
 
 // Code for update query problems. 
