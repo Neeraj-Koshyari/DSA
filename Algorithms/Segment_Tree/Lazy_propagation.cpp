@@ -35,6 +35,9 @@ void build(int idx, int l, int r, vector<long long>& v, vector<long long>& seg){
 	seg[idx] = min(seg[2*idx+1], seg[2*idx+2]);
 }
 
+// for some questions in line 40,99 the code will be 'seg[idx] += (r-l+1) * lazy[idx] ' which means line 51 will also change to (r-l+1)*val
+// for above question-link  The code remain same
+
 void update (int idx, int l, int r, int ql, int qr,int val, vector<long long>& seg, vector<long long>& lazy){
 	if(lazy[idx] != 0){	//if their any remaining value which we have to add
 		seg[idx] += lazy[idx];
