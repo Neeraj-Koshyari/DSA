@@ -8,7 +8,7 @@
 
 
 // Sum update
-void update(int idx, int l, int r, int k, int u,vector<ll>& seg){
+void update(int idx, int l, int r, int k, int u,vector<long long>& seg){
 	if(l == r){	
 		seg[idx] = u;
 		return;
@@ -22,7 +22,7 @@ void update(int idx, int l, int r, int k, int u,vector<ll>& seg){
 }
 
 // Min update
-void update(int idx, int l, int r, int k, int u,vector<ll>& seg){
+void update(int idx, int l, int r, int k, int u,vector<long long>& seg){
 	if(l == r){	
 		seg[idx] = u;
 		return;
