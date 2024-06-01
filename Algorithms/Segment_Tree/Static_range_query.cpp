@@ -4,13 +4,13 @@ T.C. for building segment tree is number of nodes ' 2*n - 1 ' ( o(n) )
 T.C. for a single query is log(n) and for q queries it become q * log(n). Where 'n' is size of array
 
 
-Code for finding Sum in given Segment
-
 size of seg vector will be ' 4*n ' 
 First call build(0,0,n-1,v,seg)
 Then for each query call query(v,0,0,n-1,l,r,seg)), Where l and r are asked range. If they are 1 based index then subtract 1 to l and r both.
 */
 
+
+//Code for finding Sum in given Segment
 
 void build(int idx,int l, int r,vector<long long>& v, vector<long long>& seg){
 	if(l == r){
@@ -39,6 +39,8 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long lon
 	return left + right;
 }
 
+
+
 //Code for finding min element in given Segment
 
 void build(int idx,int l, int r,vector<long long>& v, vector<long long>& seg){
@@ -66,20 +68,4 @@ int query(vector<int>& v, int idx, int l, int r, int qL, int qR, vector<long lon
 	long long right = query(v,2*idx+2,mid+1,r,qL,qR,seg);
 
 	return min(left,right);
-}
-
-
-// Code for update query problems. 
-//This code is for updating the sum after replacing the value of index k to u.
-void update(int idx, int l, int r, int k, int u,vector<ll>& seg){
-	if(l == r){	
-		seg[idx] = u;
-		return;
-	}
-
-	int mid = (l+r)/2;
-	if(k<=mid)	update(2*idx+1, l, mid, k, u, seg);
-	else update(2*idx+2,mid+1, r, k, u, seg);
-
-	seg[idx] = seg[2*idx + 1] + seg[2*idx + 2];
 }
