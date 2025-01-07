@@ -1,5 +1,16 @@
 // Problem Link: https://codeforces.com/contest/1186/problem/C
 
+/*
+observation:
+	if the parity of a string is same as parity of other then they will give even output
+ 	example:
+  		0110
+    		1111	then difference is even
+      	or 
+       		0010
+	 	1110	then also difference will be one
+	*/
+
 // #include<fstream>
 // freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
