@@ -1,4 +1,4 @@
------------------------------------------------ <h3>Pythagorus:</h3> --------------------------------------------
+----------------------------------------------- Pythagorus: --------------------------------------------
 
   how to determine the other 2 values by given one value
   
@@ -6,7 +6,7 @@
   Problem Link: [Click me](https://codeforces.com/problemset/problem/1487/D)
 
 
-------------------------------------- <h3>C++ STL: Policy based data structures</h3> [Link](https://codeforces.com/blog/entry/11080) ------------------------------<br>
+------------------------------------- C++ STL: Policy based data structures [Link](https://codeforces.com/blog/entry/11080) ------------------------------<br>
   Using the above data structure we can find index of an element in set in log(n) time<br>
 
   Header files needs to include:<br>
