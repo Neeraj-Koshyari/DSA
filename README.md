@@ -6,7 +6,7 @@
   Problem Link: [Click me](https://codeforces.com/problemset/problem/1487/D)
 
 
-------------------------------------- C++ STL: Policy based data structures [Link](https://codeforces.com/blog/entry/11080) ------------------------------
+------------------------------------- C++ STL: Policy based data structures [Link](https://codeforces.com/blog/entry/11080) ------------------------------<br>
   Using the above data structure we can find index of an element in set in log(n) time
 
   Header files needs to include:
@@ -14,7 +14,7 @@
     #include <ext/pb_ds/tree_policy.hpp> // Including tree_order_statistics_node_update
 
   template:
-  ------------------------------------------  for unique elements (set)  ---------------------------------------
+  ------------------------------------------  for unique elements (set)  ---------------------------------------<br>
     typedef tree<
     int,
     null_type,
