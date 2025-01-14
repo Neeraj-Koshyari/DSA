@@ -4,7 +4,7 @@
   
   Vlog link : [Click me](https://byjus.com/maths/pythagorean-triples/)
   Problem Link: [Click me](https://codeforces.com/problemset/problem/1487/D)
-
+<br>
 
 ------------------------------------- C++ STL: Policy based data structures [Link](https://codeforces.com/blog/entry/11080) ------------------------------<br>
   Using the above data structure we can find index of an element in set in log(n) time<br>
@@ -18,7 +18,7 @@
 
 
   template:<br>
-  ------------------------------------------  for unique elements (set)  ---------------------------------------<br>
+  ------for unique elements (set)  ----------<br>
     <code>typedef tree<
     int,
     null_type,
@@ -27,7 +27,7 @@
     tree_order_statistics_node_update>
     ordered_set;</code>
 
-  ------------------------------------------  for duplicate elemets (multiset)  ----------------------------------<br>
+  ----------  for duplicate elemets (multiset)  ----------<br>
     <code>typedef tree<
     pair<int, int>,
     null_type,
@@ -67,3 +67,9 @@
   }
 
   return ans;</code>
+
+<br>
+
+---------------------------------------------------------- GCD properties ----------------------------------------------------<br>
+1. gcd(x,y) = gcd(x,y-x)    (x >= y  : euclidean property) <br>
+2. gcd(a,b,c,d,........) = gcd(a, b-a, c-a, d-a, ...........) <br>
