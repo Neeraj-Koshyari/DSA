@@ -5,6 +5,9 @@
   Vlog link : [Click me](https://byjus.com/maths/pythagorean-triples/)
   Problem Link: [Click me](https://codeforces.com/problemset/problem/1487/D)
 <br>
+<br>
+
+
 
 ------------------------------------- C++ STL: Policy based data structures [Link](https://codeforces.com/blog/entry/11080) ------------------------------<br>
   Using the above data structure we can find index of an element in set in log(n) time<br>
@@ -65,10 +68,12 @@
       st.insert({nums[i],i});
       ans[i] = st.order_of_key({nums[i],i});
   }
-
   return ans;</code>
 
 <br>
+<br>
+
+
 
 ---------------------------------------------------------- GCD properties ----------------------------------------------------<br>
 1. gcd(x,y) = gcd(x,y-x)    (x >= y  : euclidean property) <br>
