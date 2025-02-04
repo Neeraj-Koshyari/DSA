@@ -1,9 +1,25 @@
 // Problem Link: https://leetcode.com/problems/maximum-score-of-spliced-array/description/
 // Solution Link: https://www.youtube.com/watch?v=6LXXAMQZztE
 
-/*
-  Hint: try DP
-  */
+// greedy solution ( video solution )
+class Solution {
+public:
+    int find(vector<int>& a, vector<int>& b){
+        int n = a.size(), sum = 0, mx = 0, total = 0;
+        for(int i=0; i<n; i++){
+            sum += (b[i] - a[i]);
+            mx = max(mx, sum);
+
+            if(sum < 0) sum = 0;
+            total += a[i];
+        }
+        return total + mx;
+    }
+
+    int maximumsSplicedArray(vector<int>& nums1, vector<int>& nums2) {
+        return max(find(nums1, nums2), find(nums2, nums1));
+    }
+};
 
 // Memoiation
 class Solution {
