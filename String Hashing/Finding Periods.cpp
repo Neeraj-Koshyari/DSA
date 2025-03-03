@@ -29,9 +29,8 @@ int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int k;
-    string s,badness;
-    cin>>s>>badness>>k;
+    string s;
+    cin>>s;
 
     int n = s.length();
     vector<int> z = z_function(s,n);
