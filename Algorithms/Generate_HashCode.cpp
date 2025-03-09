@@ -16,7 +16,7 @@ class Hashing{
 
     public:
     string s;
-    ll primes, base = 31, n;
+    ll primes, base = 239017, n;
 
     vector<ll> hashPrimes = {1000000009, 1000000007};
     vector<vector<ll>> hashValues, baseP, baseInvP;
