@@ -1,14 +1,20 @@
 class TrieNode{
 public:
-    TrieNode *children[26];
-    bool isEnd = false;
+    vector<TrieNode*> child;
+    bool isEnd;
+
+    TrieNode(){
+        child.resize(26,NULL);
+        isEnd = false;
+    }
 };
 
 class Trie {
 private:
-    TrieNode *root = new TrieNode();
+    TrieNode *root;
 public:
-    Trie() {        
+    Trie() {
+        root = new TrieNode();
     }
     
     void insert(string word) {
