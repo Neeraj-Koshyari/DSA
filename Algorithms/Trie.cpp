@@ -1,10 +1,10 @@
 class TrieNode{
 public:
-    vector<TrieNode*> child;
+    vector<TrieNode*> children;
     bool isEnd;
 
     TrieNode(){
-        child.resize(26,NULL);
+        children.resize(26,NULL);
         isEnd = false;
     }
 };
